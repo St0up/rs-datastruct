@@ -1,0 +1,11 @@
+[package]
+name = "rs-datastruct"
+version = "0.1.0"
+authors = ["Stoupy Grégoire <gregoirestoupy@gmail.com"]
+edition = "2021"
+description = "Crate de structures de données fondamentales en Rust."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/St0up/rs-datastruct"
+
+
+[dependencies]
