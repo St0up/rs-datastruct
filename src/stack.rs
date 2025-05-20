@@ -2,30 +2,11 @@
 
 use std::fmt::Display;
 
+use crate::linked_list::SimpleNode;
+
 /*
     Node définit de manière standard la structure interne de la pile
 */
-struct Node<T> {
-    elem: T,
-    next: Option<Box<Node<T>>>,
-}
-
-impl<T> Node<T> {
-    fn new(elem: T, next: Option<Box<Node<T>>>) -> Node<T> {
-        Node { elem, next }
-    }
-
-    fn display(&self)
-    where
-        T: Display,
-    {
-        print!("{} -> ", self.elem);
-        match &self.next {
-            Some(node) => node.display(),
-            None => println!("END"),
-        }
-    }
-}
 
 /*
 Pile générique définit par la tête d'une liste chaînée
@@ -35,7 +16,7 @@ Pile générique définit par la tête d'une liste chaînée
     si elle est vide.
 */
 pub struct Stack<T> {
-    head: Option<Box<Node<T>>>,
+    head: Option<Box<SimpleNode<T>>>,
     length: i32,
 }
 
@@ -56,12 +37,7 @@ impl<T> Stack<T> {
 
     // Ajouter un élément à la pile
     pub fn push(&mut self, elem: T) {
-        let new_elem: Node<T> = if self.length != 0 {
-            Node::new(elem, self.head.take())
-        } else {
-            Node::new(elem, None)
-        };
-        self.head = Some(Box::new(new_elem));
+        self.head = Some(Box::new(SimpleNode::new(elem, self.head.take())));
         self.length += 1;
     }
 
@@ -80,13 +56,10 @@ impl<T> Stack<T> {
 
     // Donne la valeur de l'élément en tête, retourne None si la pile est vide
     // Cette fonction est restreinte aux éléments dont le type définit Copy
-    pub fn peek(&self) -> Option<T>
-    where
-        T: Copy,
-    {
+    pub fn peek(&self) -> Option<&T> {
         match self.length {
             0 => None,
-            _ => Some(self.head.as_ref().unwrap().elem),
+            _ => Some(&self.head.as_ref().unwrap().elem),
         }
     }
 
@@ -107,5 +80,6 @@ impl<T> Stack<T> {
         T: Display,
     {
         self.head.as_ref().unwrap().display();
+        println!("END");
     }
 }

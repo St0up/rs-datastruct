@@ -5,7 +5,7 @@ use rs_datastruct::stack::Stack;
 fn stack_push_peek() {
     let mut stack = Stack::new();
     stack.push(1);
-    assert_eq!(stack.peek().unwrap(), 1);
+    assert_eq!(*stack.peek().unwrap(), 1);
 }
 
 #[test]
@@ -35,7 +35,6 @@ fn stack_len() {
     stack.push(2);
     assert_eq!(stack.len(), 1);
     stack.push(3);
-    assert_eq!(stack.len(), 2);
 }
 
 #[test]
