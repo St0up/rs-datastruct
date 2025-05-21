@@ -1,4 +1,5 @@
+pub mod linked_list;
 pub mod queue;
 pub mod stack;
 
-mod linked_list;
+mod simple_node;

@@ -2,7 +2,7 @@
 
 use std::fmt::Display;
 
-use crate::linked_list::SimpleNode;
+use crate::simple_node::SimpleNode;
 
 /*
     Node définit de manière standard la structure interne de la pile

@@ -1,0 +1,16 @@
+- linked list
+    - map<F>() -> LinkedList<U>	Applique une transformation à chaque élément
+    - iter()	Itérateur immuable
+    - iter_mut()	Itérateur mutable
+    - into_iter()	Consomme la liste et itère dessus
+- double liste chainée
+- Arbre binaire et arbre binaire de recherhce
+- Double ended queue
+- Heap / Binary Heap
+- Graphes
+- Union-Find / Disjoint Set
+- Table de hachage (HashMap maison)
+
+
+// Ajouter la crate Display a tous les éléments
+- Faire les tests de linked list
