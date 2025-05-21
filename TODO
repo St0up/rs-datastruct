@@ -4,7 +4,18 @@
     - iter_mut()	Itérateur mutable
     - into_iter()	Consomme la liste et itère dessus
 - double liste chainée
-- Arbre binaire et arbre binaire de recherhce
+- Arbre binaire
+    - insert_left / insert_right	Insertion directe à gauche ou droite	O(1)
+    - height	Hauteur maximale de l’arbre	O(n)
+    - size	Nombre total de nœuds	O(n)
+    - is_leaf	Vérifie si un nœud est une feuille	O(1)
+    - traverse_preorder	Parcours (racine → gauche → droite)	O(n)
+    - traverse_inorder	Parcours (gauche → racine → droite)	O(n)
+    - traverse_postorder	Parcours (gauche → droite → racine)	O(n)
+    - traverse_level_order	Parcours en largeur (BFS)	O(n)
+    - find(predicate)	Recherche avec un prédicat	O(n)
+    - display	Affiche tous les nœuds	O(n)
+- arbre binaire de recherhce
 - Double ended queue
 - Heap / Binary Heap
 - Graphes
